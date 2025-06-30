@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DeepRat — Professional AI Engineer CV</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'JetBrains Mono', monospace;
+            background-color: #121212;
+            color: #e0e0e0;
+            line-height: 1.6;
+        }
+        .typing {
+            border-right: 2px solid #32CD32;
+            animation: blink 1s step-end infinite;
+        }
+        @keyframes blink {
+            from, to { border-color: transparent }
+            50% { border-color: #32CD32; }
+        }
+        .project-card {
+            transition: all 0.3s ease;
+            border-left: 3px solid transparent;
+        }
+        .project-card:hover {
+            transform: translateY(-5px);
+            border-left: 3px solid #32CD32;
+        }
+        .highlight-project {
+            box-shadow: 0 0 15px rgba(246, 174, 45, 0.3);
+            border: 1px solid #F6AE2D;
+        }
+        .terminal-prompt {
+            color: #32CD32;
+        }
+        .terminal-command {
+            color: #F6AE2D;
+        }
+        .skill-tag {
+            background-color: rgba(50, 205, 50, 0.1);
+            border: 1px solid rgba(50, 205, 50, 0.3);
+        }
+        .link-hover:hover {
+            color: #F6AE2D;
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body class="min-h-screen">
+    <div class="container mx-auto px-4 py-8 max-w-5xl">
+        <!-- Header -->
+        <header class="mb-12">
+            <div class="flex items-center justify-between">
+                <div>
+                    <h1 class="text-3xl md:text-4xl font-bold text-green-500 mb-2">DeepRat</h1>
+                    <p class="text-amber-400">Professional AI Engineer CV</p>
+                </div>
+                <div class="hidden md:block">
+                    <div class="w-24 h-24 rounded-full bg-gradient-to-br from-green-500 to-amber-400 flex items-center justify-center">
+                        <div class="w-20 h-20 rounded-full bg-gray-800 flex items-center justify-center">
+                            <span class="text-4xl">DR</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- Presentation Section -->
+        <section class="mb-16">
+            <div class="flex items-center mb-6">
+                <span class="terminal-prompt mr-2">$</span>
+                <h2 class="terminal-command text-xl">whois deeprat</h2>
+                <span class="typing ml-2"></span>
+            </div>
+            
+            <div class="bg-gray-800 bg-opacity-50 p-6 rounded-lg border border-gray-700">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div>
+                        <div class="mb-4">
+                            <p><span class="text-green-500">Name:</span> Gonzalo Romero (DeepRat)</p>
+                            <p><span class="text-green-500">Role:</span> AI & Software Engineer | Generative AI and NLP Specialist & Developer</p>
+                            <p><span class="text-green-500">Location:</span> Córdoba, Argentina</p>
+                        </div>
+                        
+                        <div class="mb-4">
+                            <p class="text-green-500">Education & Training:</p>
+                            <ul class="list-disc list-inside ml-2">
+                                <li>Information Systems Engineering (Universidad Tecnológica Nacional, currently enrolled)</li>
+                                <li>IBM AI Engineering Professional Certificate </li>
+                                <li>Generative AI & LLMs Specialization </li>
+                                <li>DeepLearning.AI Specialization (Deep Learning & NLP)</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <p class="text-green-500 mb-2">Core Technical Skills:</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="skill-tag px-3 py-1 rounded-full text-sm">AI & Machine Learning</span>
+                            <span class="skill-tag px-3 py-1 rounded-full text-sm">NLP & RAG</span>
+                            <span class="skill-tag px-3 py-1 rounded-full text-sm">Prompt Engineering</span>
+                            <span class="skill-tag px-3 py-1 rounded-full text-sm">Fine-Tuning (QLoRA, PEFT)</span>
+                            <span class="skill-tag px-3 py-1 rounded-full text-sm">LLM Deployment</span>
+                            <span class="skill-tag px-3 py-1 rounded-full text-sm">Multimodal AI</span>
+                            <span class="skill-tag px-3 py-1 rounded-full text-sm">Cognitive Architectures</span>
+                            <span class="skill-tag px-3 py-1 rounded-full text-sm">Agent Systems</span>
+                            <span class="skill-tag px-3 py-1 rounded-full text-sm">Instruction Tuning</span>
+                            <span class="skill-tag px-3 py-1 rounded-full text-sm">Vision-Language Models</span>
+                            <span class="skill-tag px-3 py-1 rounded-full text-sm">FastAPI</span>
+                            <span class="skill-tag px-3 py-1 rounded-full text-sm">Python</span>
+                            <span class="skill-tag px-3 py-1 rounded-full text-sm">Docker</span>
+                            <span class="skill-tag px-3 py-1 rounded-full text-sm">LangChain</span>
+                            <span class="skill-tag px-3 py-1 rounded-full text-sm">Hugging Face</span>
+                            <span class="skill-tag px-3 py-1 rounded-full text-sm">LangFlow</span>
+                            <span class="skill-tag px-3 py-1 rounded-full text-sm">FAISS</span>
+                            <span class="skill-tag px-3 py-1 rounded-full text-sm">Gradio</span>
+                            <span class="skill-tag px-3 py-1 rounded-full text-sm">Streamlit</span>
+                            <span class="skill-tag px-3 py-1 rounded-full text-sm">Data Science</span>
+                            <span class="skill-tag px-3 py-1 rounded-full text-sm">UMAP</span>
+                            <span class="skill-tag px-3 py-1 rounded-full text-sm">Clustering</span>
+                            <span class="skill-tag px-3 py-1 rounded-full text-sm">Model Evaluation</span>
+                            <span class="skill-tag px-3 py-1 rounded-full text-sm">HTML/CSS/JavaScript</span>
+                            <span class="skill-tag px-3 py-1 rounded-full text-sm">Git</span>
+                            <span class="skill-tag px-3 py-1 rounded-full text-sm">REST APIs</span>
+                            <span class="skill-tag px-3 py-1 rounded-full text-sm">Google Cloud</span>
+                            <span class="skill-tag px-3 py-1 rounded-full text-sm">Hugging Face Spaces</span>
+                            <span class="skill-tag px-3 py-1 rounded-full text-sm">VS Code</span>
+                            <span class="skill-tag px-3 py-1 rounded-full text-sm">AI Ethics & Alignment</span>
+                            <span class="skill-tag px-3 py-1 rounded-full text-sm">Technical Writing</span>
+                            <span class="skill-tag px-3 py-1 rounded-full text-sm">Terminal UI</span>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section class="mb-16">
+            <div class="flex items-center mb-6">
+                <span class="terminal-prompt mr-2">$</span>
+                <h2 class="terminal-command text-xl">ls projects/</h2>
+                <span class="typing ml-2"></span>
+            </div>
+            
+            <!-- Highlighted Project (TrueEye) -->
+            <div class="project-card highlight-project bg-gray-800 p-6 rounded-lg mb-8">
+                <div class="flex items-center mb-4">
+                    <span class="text-amber-400 text-xl mr-3">★</span>
+                    <h3 class="text-xl font-bold text-amber-400">TrueEye — Intelligent Media Literacy System</h3>
+                </div>
+                <p class="mb-4">"TrueEye is an AI-powered platform analyzing news content to detect subtle bias and manipulation, identifying target audiences and hidden intentions. Provides detailed media literacy reports. TrueEye is a practical spin-off of the philosophical and research-driven project 'Project ConCiencia'."</p>
+                
+                <p class="text-green-500 mb-2">Technologies:</p>
+                <div class="flex flex-wrap gap-2 mb-4">
+                    <span class="skill-tag px-3 py-1 rounded-full text-sm">TailwindCSS</span>
+                    <span class="skill-tag px-3 py-1 rounded-full text-sm">JavaScript</span>
+                    <span class="skill-tag px-3 py-1 rounded-full text-sm">FastAPI</span>
+                    <span class="skill-tag px-3 py-1 rounded-full text-sm">Claude API</span>
+                    <span class="skill-tag px-3 py-1 rounded-full text-sm">LangFlow</span>
+                </div>
+                
+                <div class="flex flex-wrap gap-4">
+                    <a href="https://github.com/DeepRatAI/TrueEye_v1" target="_blank" class="link-hover text-green-500 flex items-center">
+                        <svg class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" clip-rule="evenodd"></path></svg>
+                        GitHub
+                    </a>
+                    <a href="https://huggingface.co/spaces/DeepRat/TrueEye_Reports" target="_blank" class="link-hover text-green-500">Interactive Demo</a>
+                    <a href="https://trueeye.deeprat.tech" target="_blank" class="link-hover text-green-500">Official Web</a>
+                </div>
+            </div>
+            
+            <!-- Other Projects -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <!-- Mole -->
+                <div class="project-card bg-gray-800 bg-opacity-50 p-6 rounded-lg border border-gray-700">
+                    <h3 class="text-lg font-bold mb-3">Mole — RAG-Powered Chatbot for Educational Documents</h3>
+                    <p class="mb-4">"Mole is a bilingual chatbot turning PDFs and notes into interactive Q&A sessions using Retrieval-Augmented Generation, offering detailed or brief answers in English and Spanish."</p>
+                    
+                    <p class="text-green-500 mb-2">Technologies:</p>
+                    <div class="flex flex-wrap gap-2 mb-4">
+                        <span class="skill-tag px-3 py-1 rounded-full text-sm">Jupyter</span>
+                        <span class="skill-tag px-3 py-1 rounded-full text-sm">Gradio</span>
+                        <span class="skill-tag px-3 py-1 rounded-full text-sm">FAISS</span>
+                        <span class="skill-tag px-3 py-1 rounded-full text-sm">sentence-transformers</span>
+                        <span class="skill-tag px-3 py-1 rounded-full text-sm">LLaMA-2 7B</span>
+                    </div>
+                    
+                    <a href="https://github.com/DeepRatAI/Mole_v1" target="_blank" class="link-hover text-green-500 flex items-center">
+                        <svg class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" clip-rule="evenodd"></path></svg>
+                        GitHub
+                    </a>
+                </div>
+                
+                <!-- Project ConCiencia -->
+                <div class="project-card bg-gray-800 bg-opacity-50 p-6 rounded-lg border border-gray-700">
+                    <h3 class="text-lg font-bold mb-3">Project ConCiencia – AI & Human Consciousness Research</h3>
+                    <p class="mb-4">"A transdisciplinary initiative exploring computational models of human consciousness using AI, cognitive science, NLP, and computer vision to understand subjective experiences."</p>
+                    
+                    <p class="text-green-500 mb-2">Technologies:</p>
+                    <div class="flex flex-wrap gap-2 mb-4">
+                        <span class="skill-tag px-3 py-1 rounded-full text-sm">LLMs</span>
+                        <span class="skill-tag px-3 py-1 rounded-full text-sm">Computer Vision</span>
+                        <span class="skill-tag px-3 py-1 rounded-full text-sm">NLP</span>
+                        <span class="skill-tag px-3 py-1 rounded-full text-sm">Cognitive Science</span>
+                    </div>
+                    
+                    <a href="https://github.com/DeepRatAI/Project-ConCiencia" target="_blank" class="link-hover text-green-500 flex items-center">
+                        <svg class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" clip-rule="evenodd"></path></svg>
+                        GitHub
+                    </a>
+                </div>
+                
+                <!-- RAG Chatbot Benchmark -->
+                <div class="project-card bg-gray-800 bg-opacity-50 p-6 rounded-lg border border-gray-700">
+                    <h3 class="text-lg font-bold mb-3">RAG Chatbot Benchmark (Colab)</h3>
+                    <p class="mb-4">"Comprehensive benchmark comparing open-source LLM chatbots in Retrieval-Augmented Generation setups across GPUs (Phi-2, LLaMA-2), providing metrics for latency and answer quality."</p>
+                    
+                    <p class="text-green-500 mb-2">Technologies:</p>
+                    <div class="flex flex-wrap gap-2 mb-4">
+                        <span class="skill-tag px-3 py-1 rounded-full text-sm">Python</span>
+                        <span class="skill-tag px-3 py-1 rounded-full text-sm">FAISS</span>
+                        <span class="skill-tag px-3 py-1 rounded-full text-sm">Phi-2</span>
+                        <span class="skill-tag px-3 py-1 rounded-full text-sm">BERTScore</span>
+                        <span class="skill-tag px-3 py-1 rounded-full text-sm">ROUGE-L</span>
+                        <span class="skill-tag px-3 py-1 rounded-full text-sm">UMAP</span>
+                        <span class="skill-tag px-3 py-1 rounded-full text-sm">KMeans</span>
+                    </div>
+                    
+                    <div class="flex flex-wrap gap-4">
+                        <a href="https://github.com/DeepRatAI/RAGbotBenchmark_Gcolab" target="_blank" class="link-hover text-green-500 flex items-center">
+                            <svg class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" clip-rule="evenodd"></path></svg>
+                            GitHub
+                        </a>
+                        <a href="https://www.linkedin.com/pulse/rag-colab-hands-on-benchmarking-phi-2-llama-2-t4-vs-a100-romero-zvrgf/?trackingId=koE0NRfyTmy8InjTtJeFJg%3D%3D" target="_blank" class="link-hover text-green-500">Benchmark Article</a>
+                    </div>
+                </div>
+                
+                <!-- YOLOv8 -->
+                <div class="project-card bg-gray-800 bg-opacity-50 p-6 rounded-lg border border-gray-700">
+                    <h3 class="text-lg font-bold mb-3">YOLOv8 Video Object Detection Tutorial</h3>
+                    <p class="mb-4">"Interactive tutorial demonstrating real-time video object detection using YOLOv8, enabling users to upload videos and filter object detection categories."</p>
+                    
+                    <p class="text-green-500 mb-2">Technologies:</p>
+                    <div class="flex flex-wrap gap-2 mb-4">
+                        <span class="skill-tag px-3 py-1 rounded-full text-sm">YOLOv8</span>
+                        <span class="skill-tag px-3 py-1 rounded-full text-sm">Gradio</span>
+                        <span class="skill-tag px-3 py-1 rounded-full text-sm">Python</span>
+                        <span class="skill-tag px-3 py-1 rounded-full text-sm">Computer Vision</span>
+                    </div>
+                    
+                    <div class="flex flex-wrap gap-4">
+                        <a href="https://github.com/DeepRatAI/Yolov8_Detection" target="_blank" class="link-hover text-green-500 flex items-center">
+                            <svg class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" clip-rule="evenodd"></path></svg>
+                            GitHub
+                        </a>
+                        <a href="https://medium.com/@hermmes.ia/una-introducci%C3%B3n-visual-al-futuro-de-la-ia-multimodal-8df9e6f8935a" target="_blank" class="link-hover text-green-500">Demo & Tutorial</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section class="mb-16">
+            <div class="flex items-center mb-6">
+                <span class="terminal-prompt mr-2">$</span>
+                <h2 class="terminal-command text-xl">./hire_me.sh</h2>
+                <span class="typing ml-2"></span>
+            </div>
+            
+            <div class="bg-gray-800 bg-opacity-50 p-6 rounded-lg border border-gray-700">
+                <div class="mb-6">
+                    <p class="text-green-500 mb-2">> I'm currently open to AI Engineering, NLP, and Full-Stack AI Development roles.</p>
+                    <p class="text-green-500 mb-2">> Highly motivated to join your team, contribute my talent, and eager to learn from experienced colleagues.</p>
+                    <p class="text-green-500">> Contact me directly (if you reach out via email, please include the word ‘DeepRat’ in the subject line), or visit my professional website to reach out through the contact form.</p>
+                </div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div>
+                        <p class="text-green-500">EMAIL="<a href="mailto:info@deeprat.tech" class="link-hover">info@deeprat.tech</a>"</p>
+                        <p class="text-green-500">LINKEDIN="<a href="https://www.linkedin.com/in/gonzalo-romero-b9b5b4355/" target="_blank" class="link-hover">linkedin.com</a>"</p>
+                    </div>
+                    <div>
+                        <p class="text-green-500">GITHUB="<a href="https://github.com/DeepRatAI" target="_blank" class="link-hover">github.com/DeepRatAI</a>"</p>
+                        <p class="text-green-500">MEDIUM="<a href="https://medium.com/@hermmes.ia" target="_blank" class="link-hover">medium.com</a>"</p>
+                        <p class="text-green-500">PROFESSIONAL_WEB="<a href="https://deeprat.tech" target="_blank" class="link-hover">deeprat.tech</a>"</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="text-center text-gray-500 text-sm">
+            <p>©2025 DeepRat (Gonzalo Romero)</p>
+            <p class="mb-4">AI & Software Engineer, Generative AI and NLP Specialist & Developer</p>
+            <p class="text-amber-400"># Digital lab rat at your service for your next big project.</p>
+        </footer>
+    </div>
+
+    <script>
+        // Typing animation
+        document.addEventListener('DOMContentLoaded', function() {
+            const typingElements = document.querySelectorAll('.typing');
+            
+            typingElements.forEach(el => {
+                // Add blinking cursor
+                setInterval(() => {
+                    el.style.borderRightColor = el.style.borderRightColor === 'rgb(50, 205, 50)' ? 'transparent' : 'rgb(50, 205, 50)';
+                }, 600);
+            });
+            
+            // Project card hover effects
+            const projectCards = document.querySelectorAll('.project-card');
+            projectCards.forEach(card => {
+                card.addEventListener('mouseenter', () => {
+                    if (!card.classList.contains('highlight-project')) {
+                        card.style.boxShadow = '0 0 10px rgba(50, 205, 50, 0.3)';
+                    }
+                });
+                card.addEventListener('mouseleave', () => {
+                    if (!card.classList.contains('highlight-project')) {
+                        card.style.boxShadow = '';
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
