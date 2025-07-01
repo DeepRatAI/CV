@@ -47,6 +47,68 @@
             color: #F6AE2D;
             text-decoration: underline;
         }
+        /* Language Switcher Styles */
+        .lang-switcher {
+            position: relative;
+            display: inline-block;
+        }
+        .lang-switcher button {
+            background-color: rgba(50, 205, 50, 0.1);
+            border: 1px solid #32CD32;
+            color: #32CD32;
+            padding: 0.5rem 1rem;
+            border-radius: 0.25rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.875rem;
+        }
+        .lang-switcher button:hover {
+            background-color: rgba(50, 205, 50, 0.2);
+            box-shadow: 0 0 10px rgba(50, 205, 50, 0.3);
+        }
+        .lang-dropdown {
+            position: absolute;
+            top: 100%;
+            right: 0;
+            margin-top: 0.5rem;
+            background-color: #1a1a1a;
+            border: 1px solid #32CD32;
+            border-radius: 0.25rem;
+            overflow: hidden;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(-10px);
+            transition: all 0.3s ease;
+            z-index: 1000;
+        }
+        .lang-dropdown.active {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+        .lang-option {
+            display: block;
+            width: 100%;
+            padding: 0.5rem 1rem;
+            text-align: left;
+            background: none;
+            border: none;
+            color: #e0e0e0;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.875rem;
+            text-decoration: none;
+        }
+        .lang-option:hover {
+            background-color: rgba(50, 205, 50, 0.2);
+            color: #32CD32;
+        }
+        .lang-option.active {
+            background-color: rgba(50, 205, 50, 0.1);
+            color: #32CD32;
+        }
     </style>
 </head>
 <body class="min-h-screen">
@@ -58,10 +120,27 @@
                     <h1 class="text-3xl md:text-4xl font-bold text-green-500 mb-2">DeepRat</h1>
                     <p class="text-amber-400">Professional AI Engineer CV</p>
                 </div>
-                <div class="hidden md:block">
-                    <div class="w-40 h-40 rounded-full bg-gradient-to-br from-green-500 to-amber-400 flex items-center justify-center">
-                        <div class="w-36 h-36 rounded-full bg-gray-800 flex items-center justify-center overflow-hidden">
-                            <img src="img/i.png" alt="DeepRat Logo" class="w-full h-full object-cover">
+                <div class="flex items-center gap-4">
+                    <!-- Language Switcher -->
+                    <div class="lang-switcher">
+                        <button onclick="toggleLangDropdown()" class="flex items-center gap-2">
+                            <span>🌐</span>
+                            <span>EN</span>
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                            </svg>
+                        </button>
+                        <div id="langDropdown" class="lang-dropdown">
+                            <a href="index.html" class="lang-option active">English</a>
+                            <a href="index_es.html" class="lang-option">Español</a>
+                            <a href="index_it.html" class="lang-option">Italiano</a>
+                        </div>
+                    </div>
+                    <div class="hidden md:block">
+                        <div class="w-40 h-40 rounded-full bg-gradient-to-br from-green-500 to-amber-400 flex items-center justify-center">
+                            <div class="w-36 h-36 rounded-full bg-gray-800 flex items-center justify-center overflow-hidden">
+                                <img src="img/i.png" alt="DeepRat Logo" class="w-full h-full object-cover">
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -275,7 +354,7 @@
                 <div class="mb-6">
                     <p class="text-green-500 mb-2">> I'm currently open to AI Engineering, NLP, and Full-Stack AI Development roles.</p>
                     <p class="text-green-500 mb-2">> Highly motivated to join your team, contribute my talent, and eager to learn from experienced colleagues.</p>
-                    <p class="text-green-500">> Contact me directly (if you reach out via email, please include the word ‘DeepRat’ in the subject line), or visit my professional website to reach out through the contact form.</p>
+                    <p class="text-green-500">> Contact me directly (if you reach out via email, please include the word 'DeepRat' in the subject line), or visit my professional website to reach out through the contact form.</p>
                 </div>
                 
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -301,6 +380,20 @@
     </div>
 
     <script>
+        // Language Switcher Function
+        function toggleLangDropdown() {
+            const dropdown = document.getElementById('langDropdown');
+            dropdown.classList.toggle('active');
+            
+            // Close dropdown when clicking outside
+            document.addEventListener('click', function closeDropdown(e) {
+                if (!e.target.closest('.lang-switcher')) {
+                    dropdown.classList.remove('active');
+                    document.removeEventListener('click', closeDropdown);
+                }
+            });
+        }
+        
         // Typing animation
         document.addEventListener('DOMContentLoaded', function() {
             const typingElements = document.querySelectorAll('.typing');
@@ -329,5 +422,4 @@
         });
     </script>
 </body>
-</html>
 </html>
