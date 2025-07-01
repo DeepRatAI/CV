@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DeepRat — CV Profesional de Ingeniero IA</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'JetBrains Mono', monospace;
+            background-color: #121212;
+            color: #e0e0e0;
+            line-height: 1.6;
+        }
+        .typing {
+            border-right: 2px solid #32CD32;
+            animation: blink 1s step-end infinite;
+        }
+        @keyframes blink {
+            from, to { border-color: transparent }
+            50% { border-color: #32CD32; }
+        }
+        .project-card {
+            transition: all 0.3s ease;
+            border-left: 3px solid transparent;
+        }
+        .project-card:hover {
+            transform: translateY(-5px);
+            border-left: 3px solid #32CD32;
+        }
+        .highlight-project {
+            box-shadow: 0 0 15px rgba(246, 174, 45, 0.3);
+            border: 1px solid #F6AE2D;
+        }
+        .terminal-prompt {
+            color: #32CD32;
+        }
+        .terminal-command {
+            color: #F6AE2D;
+        }
+        .skill-tag {
+            background-color: rgba(50, 205, 50, 0.1);
+            border: 1px solid rgba(50, 205, 50, 0.3);
+        }
+        .link-hover:hover {
+            color: #F6AE2D;
+            text-decoration: underline;
+        }
+        /* Language Switcher Styles */
+        .lang-switcher {
+            position: relative;
+            display: inline-block;
+        }
+        .lang-switcher button {
+            background-color: rgba(50, 205, 50, 0.1);
+            border: 1px solid #32CD32;
+            color: #32CD32;
+            padding: 0.5rem 1rem;
+            border-radius: 0.25rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.875rem;
+        }
+        .lang-switcher button:hover {
+            background-color: rgba(50, 205, 50, 0.2);
+            box-shadow: 0 0 10px rgba(50, 205, 50, 0.3);
+        }
+        .lang-dropdown {
+            position: absolute;
+            top: 100%;
+            right: 0;
+            margin-top: 0.5rem;
+            background-color: #1a1a1a;
+            border: 1px solid #32CD32;
+            border-radius: 0.25rem;
+            overflow: hidden;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(-10px);
+            transition: all 0.3s ease;
+            z-index: 1000;
+        }
+        .lang-dropdown.active {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+        .lang-option {
+            display: block;
+            width: 100%;
+            padding: 0.5rem 1rem;
+            text-align: left;
+            background: none;
+            border: none;
+            color: #e0e0e0;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.875rem;
+            text-decoration: none;
+        }
+        .lang-option:hover {
+            background-color: rgba(50, 205, 50, 0.2);
+            color: #32CD32;
+        }
+        .lang-option.active {
+            background-color: rgba(50, 205, 50, 0.1);
+            color: #32CD32;
+        }
+    </style>
+</head>
+<body class="min-h-screen">
+    <div class="container mx-auto px-4 py-8 max-w-5xl">
+        <!-- Header -->
+        <header class="mb-12">
+            <div class="flex items-center justify-between">
+                <div>
+                    <h1 class="text-3xl md:text-4xl font-bold text-green-500 mb-2">DeepRat</h1>
+                    <p class="text-amber-400">CV Profesional de Ingeniero IA</p>
+                </div>
+                <div class="flex items-center gap-4">
+                    <!-- Language Switcher -->
+                    <div class="lang-switcher">
+                        <button onclick="toggleLangDropdown()" class="flex items-center gap-2">
+                            <span>🌐</span>
+                            <span>ES</span>
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                            </svg>
+                        </button>
+                        <div id="langDropdown" class="lang-dropdown">
+                            <a href="index.html" class="lang-option">English</a>
+                            <a href="index_es.html" class="lang-option active">Español</a>
+                            <a href="index_it.html" class="lang-option">Italiano</a>
+                        </div>
+                    </div>
+                    <div class="hidden md:block">
+                        <div class="w-40 h-40 rounded-full bg-gradient-to-br from-green-500 to-amber-400 flex items-center justify-center">
+                            <div class="w-36 h-36 rounded-full bg-gray-800 flex items-center justify-center overflow-hidden">
+                                <img src="img/i.png" alt="DeepRat Logo" class="w-full h-full object-cover">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- Presentation Section -->
+        <section class="mb-16">
+            <div class="flex items-center mb-6">
+                <span class="terminal-prompt mr-2">$</span>
+                <h2 class="terminal-command text-xl">whois deeprat</h2>
+                <span class="typing ml-2"></span>
+            </div>
+            
+            <div class="bg-gray-800 bg-opacity-50 p-6 rounded-lg border border-gray-700">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div>
+                        <div class="mb-4">
+                            <p><span class="text-green-500">Nombre:</span> Gonzalo Romero (DeepRat)</p>
+                            <p><span class="text-green-500">Rol:</span> Ingeniero de IA y Software | Especialista y Desarrollador de IA Generativa y NLP</p>
+                            <p><span class="text-green-500">Ubicación:</span> Córdoba, Argentina</p>
+                        </div>
+                        
+                        <div class="mb-4">
+                            <p class="text-green-500">Educación y Formación:</p>
+                            <ul class="list-disc list-inside ml-2">
+                                <li>Ingeniería en Sistemas de Información (Universidad Tecnológica Nacional, actualmente cursando)</li>
+                                <li>Certificado Profesional de Ingeniería de IA de IBM</li>
+                                <li>Especialización en IA Generativa y LLMs</li>
+                                <li>Especialización DeepLearning.AI (Deep Learning y NLP)</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <p class="text-green-500 mb-2">Habilidades Técnicas Principales:</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="skill-tag px-3 py-1 rounded-full text-sm">IA y Machine Learning</span>
+                            <span class="skill-tag px-3 py-1 rounded-full text-sm">NLP y RAG</span>
+                            <span class="skill-tag px-3 py-1 rounded-full text-sm">Ingeniería de Prompts</span>
+                            <span class="skill-tag px-3 py-1 rounded-full text-sm">Fine-Tuning (QLoRA, PEFT)</span>
+                            <span class="skill-tag px-3 py-1 rounded-full text-sm">Despliegue de LLM</span>
+                            <span class="skill-tag px-3 py-1 rounded-full text-sm">IA Multimodal</span>
+                            <span class="skill-tag px-3 py-1 rounded-full text-sm">Arquitecturas Cognitivas</span>
+                            <span class="skill-tag px-3 py-1 rounded-full text-sm">Sistemas de Agentes</span>
+                            <span class="skill-tag px-3 py-1 rounded-full text-sm">Ajuste por Instrucciones</span>
+                            <span class="skill-tag px-3 py-1 rounded-full text-sm">Modelos Visión-Lenguaje</span>
+                            <span class="skill-tag px-3 py-1 rounded-full text-sm">FastAPI</span>
+                            <span class="skill-tag px-3 py-1 rounded-full text-sm">Python</span>
+                            <span class="skill-tag px-3 py-1 rounded-full text-sm">Docker</span>
+                            <span class="skill-tag px-3 py-1 rounded-full text-sm">LangChain</span>
+                            <span class="skill-tag px-3 py-1 rounded-full text-sm">Hugging Face</span>
+                            <span class="skill-tag px-3 py-1 rounded-full text-sm">LangFlow</span>
+                            <span class="skill-tag px-3 py-1 rounded-full text-sm">FAISS</span>
+                            <span class="skill-tag px-3 py-1 rounded-full text-sm">Gradio</span>
+                            <span class="skill-tag px-3 py-1 rounded-full text-sm">Streamlit</span>
+                            <span class="skill-tag px-3 py-1 rounded-full text-sm">Ciencia de Datos</span>
+                            <span class="skill-tag px-3 py-1 rounded-full text-sm">UMAP</span>
+                            <span class="skill-tag px-3 py-1 rounded-full text-sm">Clustering</span>
+                            <span class="skill-tag px-3 py-1 rounded-full text-sm">Evaluación de Modelos</span>
+                            <span class="skill-tag px-3 py-1 rounded-full text-sm">HTML/CSS/JavaScript</span>
+                            <span class="skill-tag px-3 py-1 rounded-full text-sm">Git</span>
+                            <span class="skill-tag px-3 py-1 rounded-full text-sm">APIs REST</span>
+                            <span class="skill-tag px-3 py-1 rounded-full text-sm">Google Cloud</span>
+                            <span class="skill-tag px-3 py-1 rounded-full text-sm">Hugging Face Spaces</span>
+                            <span class="skill-tag px-3 py-1 rounded-full text-sm">VS Code</span>
+                            <span class="skill-tag px-3 py-1 rounded-full text-sm">Ética y Alineamiento de IA</span>
+                            <span class="skill-tag px-3 py-1 rounded-full text-sm">Redacción Técnica</span>
+                            <span class="skill-tag px-3 py-1 rounded-full text-sm">Interfaz de Terminal</span>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section class="mb-16">
+            <div class="flex items-center mb-6">
+                <span class="terminal-prompt mr-2">$</span>
+                <h2 class="terminal-command text-xl">ls proyectos/</h2>
+                <span class="typing ml-2"></span>
+            </div>
+            
+            <!-- Highlighted Project (TrueEye) -->
+            <div class="project-card highlight-project bg-gray-800 p-6 rounded-lg mb-8">
+                <div class="flex items-center mb-4">
+                    <span class="text-amber-400 text-xl mr-3">★</span>
+                    <h3 class="text-xl font-bold text-amber-400">TrueEye — Sistema Inteligente de Alfabetización Mediática</h3>
+                </div>
+                <p class="mb-4">"TrueEye es una plataforma impulsada por IA que analiza contenido noticioso para detectar sesgos sutiles y manipulación, identificando audiencias objetivo e intenciones ocultas. Proporciona informes detallados de alfabetización mediática. TrueEye es un derivado práctico del proyecto filosófico y de investigación 'Project ConCiencia'."</p>
+                
+                <p class="text-green-500 mb-2">Tecnologías:</p>
+                <div class="flex flex-wrap gap-2 mb-4">
+                    <span class="skill-tag px-3 py-1 rounded-full text-sm">TailwindCSS</span>
+                    <span class="skill-tag px-3 py-1 rounded-full text-sm">JavaScript</span>
+                    <span class="skill-tag px-3 py-1 rounded-full text-sm">FastAPI</span>
+                    <span class="skill-tag px-3 py-1 rounded-full text-sm">Claude API</span>
+                    <span class="skill-tag px-3 py-1 rounded-full text-sm">LangFlow</span>
+                </div>
+                
+                <div class="flex flex-wrap gap-4">
+                    <a href="https://github.com/DeepRatAI/TrueEye_v1" target="_blank" class="link-hover text-green-500 flex items-center">
+                        <svg class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" clip-rule="evenodd"></path></svg>
+                        GitHub
+                    </a>
+                    <a href="https://huggingface.co/spaces/DeepRat/TrueEye_Reports" target="_blank" class="link-hover text-green-500">Demo Interactiva</a>
+                    <a href="https://trueeye.deeprat.tech" target="_blank" class="link-hover text-green-500">Web Oficial</a>
+                </div>
+            </div>
+            
+            <!-- Other Projects -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <!-- Mole -->
+                <div class="project-card bg-gray-800 bg-opacity-50 p-6 rounded-lg border border-gray-700">
+                    <h3 class="text-lg font-bold mb-3">Mole — Chatbot con RAG para Documentos Educativos</h3>
+                    <p class="mb-4">"Mole es un chatbot bilingüe que convierte PDFs y notas en sesiones interactivas de preguntas y respuestas usando Generación Aumentada por Recuperación, ofreciendo respuestas detalladas o breves en inglés y español."</p>
+                    
+                    <p class="text-green-500 mb-2">Tecnologías:</p>
+                    <div class="flex flex-wrap gap-2 mb-4">
+                        <span class="skill-tag px-3 py-1 rounded-full text-sm">Jupyter</span>
+                        <span class="skill-tag px-3 py-1 rounded-full text-sm">Gradio</span>
+                        <span class="skill-tag px-3 py-1 rounded-full text-sm">FAISS</span>
+                        <span class="skill-tag px-3 py-1 rounded-full text-sm">sentence-transformers</span>
+                        <span class="skill-tag px-3 py-1 rounded-full text-sm">LLaMA-2 7B</span>
+                    </div>
+                    
+                    <a href="https://github.com/DeepRatAI/Mole_v1" target="_blank" class="link-hover text-green-500 flex items-center">
+                        <svg class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" clip-rule="evenodd"></path></svg>
+                        GitHub
+                    </a>
+                </div>
+                
+                <!-- Project ConCiencia -->
+                <div class="project-card bg-gray-800 bg-opacity-50 p-6 rounded-lg border border-gray-700">
+                    <h3 class="text-lg font-bold mb-3">Project ConCiencia – Investigación sobre IA y Conciencia Humana</h3>
+                    <p class="mb-4">"Una iniciativa transdisciplinaria que explora modelos computacionales de conciencia humana usando IA, ciencia cognitiva, NLP y visión por computadora para entender experiencias subjetivas."</p>
+                    
+                    <p class="text-green-500 mb-2">Tecnologías:</p>
+                    <div class="flex flex-wrap gap-2 mb-4">
+                        <span class="skill-tag px-3 py-1 rounded-full text-sm">LLMs</span>
+                        <span class="skill-tag px-3 py-1 rounded-full text-sm">Visión por Computadora</span>
+                        <span class="skill-tag px-3 py-1 rounded-full text-sm">NLP</span>
+                        <span class="skill-tag px-3 py-1 rounded-full text-sm">Ciencia Cognitiva</span>
+                    </div>
+                    
+                    <a href="https://github.com/DeepRatAI/Project-ConCiencia" target="_blank" class="link-hover text-green-500 flex items-center">
+                        <svg class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" clip-rule="evenodd"></path></svg>
+                        GitHub
+                    </a>
+                </div>
+                
+                <!-- RAG Chatbot Benchmark -->
+                <div class="project-card bg-gray-800 bg-opacity-50 p-6 rounded-lg border border-gray-700">
+                    <h3 class="text-lg font-bold mb-3">Benchmark de Chatbot RAG (Colab)</h3>
+                    <p class="mb-4">"Benchmark integral comparando chatbots LLM de código abierto en configuraciones de Generación Aumentada por Recuperación a través de GPUs (Phi-2, LLaMA-2), proporcionando métricas de latencia y calidad de respuesta."</p>
+                    
+                    <p class="text-green-500 mb-2">Tecnologías:</p>
+                    <div class="flex flex-wrap gap-2 mb-4">
+                        <span class="skill-tag px-3 py-1 rounded-full text-sm">Python</span>
+                        <span class="skill-tag px-3 py-1 rounded-full text-sm">FAISS</span>
+                        <span class="skill-tag px-3 py-1 rounded-full text-sm">Phi-2</span>
+                        <span class="skill-tag px-3 py-1 rounded-full text-sm">BERTScore</span>
+                        <span class="skill-tag px-3 py-1 rounded-full text-sm">ROUGE-L</span>
+                        <span class="skill-tag px-3 py-1 rounded-full text-sm">UMAP</span>
+                        <span class="skill-tag px-3 py-1 rounded-full text-sm">KMeans</span>
+                    </div>
+                    
+                    <div class="flex flex-wrap gap-4">
+                        <a href="https://github.com/DeepRatAI/RAGbotBenchmark_Gcolab" target="_blank" class="link-hover text-green-500 flex items-center">
+                            <svg class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" clip-rule="evenodd"></path></svg>
+                            GitHub
+                        </a>
+                        <a href="https://www.linkedin.com/pulse/rag-colab-hands-on-benchmarking-phi-2-llama-2-t4-vs-a100-romero-zvrgf/?trackingId=koE0NRfyTmy8InjTtJeFJg%3D%3D" target="_blank" class="link-hover text-green-500">Artículo del Benchmark</a>
+                    </div>
+                </div>
+                
+                <!-- YOLOv8 -->
+                <div class="project-card bg-gray-800 bg-opacity-50 p-6 rounded-lg border border-gray-700">
+                    <h3 class="text-lg font-bold mb-3">Tutorial de Detección de Objetos en Video con YOLOv8</h3>
+                    <p class="mb-4">"Tutorial interactivo que demuestra la detección de objetos en video en tiempo real usando YOLOv8, permitiendo a los usuarios cargar videos y filtrar categorías de detección de objetos."</p>
+                    
+                    <p class="text-green-500 mb-2">Tecnologías:</p>
+                    <div class="flex flex-wrap gap-2 mb-4">
+                        <span class="skill-tag px-3 py-1 rounded-full text-sm">YOLOv8</span>
+                        <span class="skill-tag px-3 py-1 rounded-full text-sm">Gradio</span>
+                        <span class="skill-tag px-3 py-1 rounded-full text-sm">Python</span>
+                        <span class="skill-tag px-3 py-1 rounded-full text-sm">Visión por Computadora</span>
+                    </div>
+                    
+                    <div class="flex flex-wrap gap-4">
+                        <a href="https://github.com/DeepRatAI/Yolov8_Detection" target="_blank" class="link-hover text-green-500 flex items-center">
+                            <svg class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" clip-rule="evenodd"></path></svg>
+                            GitHub
+                        </a>
+                        <a href="https://medium.com/@hermmes.ia/una-introducci%C3%B3n-visual-al-futuro-de-la-ia-multimodal-8df9e6f8935a" target="_blank" class="link-hover text-green-500">Demo y Tutorial</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section class="mb-16">
+            <div class="flex items-center mb-6">
+                <span class="terminal-prompt mr-2">$</span>
+                <h2 class="terminal-command text-xl">./contrátame.sh</h2>
+                <span class="typing ml-2"></span>
+            </div>
+            
+            <div class="bg-gray-800 bg-opacity-50 p-6 rounded-lg border border-gray-700">
+                <div class="mb-6">
+                    <p class="text-green-500 mb-2">> Actualmente estoy abierto a roles de Ingeniería de IA, NLP y Desarrollo Full-Stack de IA.</p>
+                    <p class="text-green-500 mb-2">> Altamente motivado para unirme a tu equipo, contribuir con mi talento y ansioso por aprender de colegas experimentados.</p>
+                    <p class="text-green-500">> Contáctame directamente (si me contactas por correo electrónico, por favor incluye la palabra 'DeepRat' en el asunto), o visita mi sitio web profesional para contactar a través del formulario de contacto.</p>
+                </div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div>
+                        <p class="text-green-500">EMAIL="<a href="mailto:info@deeprat.tech" class="link-hover">info@deeprat.tech</a>"</p>
+                        <p class="text-green-500">LINKEDIN="<a href="https://www.linkedin.com/in/gonzalo-romero-b9b5b4355/" target="_blank" class="link-hover">linkedin.com</a>"</p>
+                    </div>
+                    <div>
+                        <p class="text-green-500">GITHUB="<a href="https://github.com/DeepRatAI" target="_blank" class="link-hover">github.com/DeepRatAI</a>"</p>
+                        <p class="text-green-500">MEDIUM="<a href="https://medium.com/@hermmes.ia" target="_blank" class="link-hover">medium.com</a>"</p>
+                        <p class="text-green-500">WEB_PROFESIONAL="<a href="https://deeprat.tech" target="_blank" class="link-hover">deeprat.tech</a>"</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="text-center text-gray-500 text-sm">
+            <p>©2025 DeepRat (Gonzalo Romero)</p>
+            <p class="mb-4">Ingeniero de IA y Software, Especialista y Desarrollador de IA Generativa y NLP</p>
+            <p class="text-amber-400"># Rata de laboratorio digital a tu servicio para tu próximo gran proyecto.</p>
+        </footer>
+    </div>
+
+    <script>
+        // Language Switcher Function
+        function toggleLangDropdown() {
+            const dropdown = document.getElementById('langDropdown');
+            dropdown.classList.toggle('active');
+            
+            // Close dropdown when clicking outside
+            document.addEventListener('click', function closeDropdown(e) {
+                if (!e.target.closest('.lang-switcher')) {
+                    dropdown.classList.remove('active');
+                    document.removeEventListener('click', closeDropdown);
+                }
+            });
+        }
+        
+        // Typing animation
+        document.addEventListener('DOMContentLoaded', function() {
+            const typingElements = document.querySelectorAll('.typing');
+            
+            typingElements.forEach(el => {
+                // Add blinking cursor
+                setInterval(() => {
+                    el.style.borderRightColor = el.style.borderRightColor === 'rgb(50, 205, 50)' ? 'transparent' : 'rgb(50, 205, 50)';
+                }, 600);
+            });
+            
+            // Project card hover effects
+            const projectCards = document.querySelectorAll('.project-card');
+            projectCards.forEach(card => {
+                card.addEventListener('mouseenter', () => {
+                    if (!card.classList.contains('highlight-project')) {
+                        card.style.boxShadow = '0 0 10px rgba(50, 205, 50, 0.3)';
+                    }
+                });
+                card.addEventListener('mouseleave', () => {
+                    if (!card.classList.contains('highlight-project')) {
+                        card.style.boxShadow = '';
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
