@@ -109,6 +109,30 @@
             background-color: rgba(50, 205, 50, 0.1);
             color: #32CD32;
         }
+        /* PDF Download Button Styles */
+        .pdf-download-btn {
+            background: linear-gradient(135deg, rgba(50, 205, 50, 0.2), rgba(246, 174, 45, 0.2));
+            border: 2px solid #32CD32;
+            color: #32CD32;
+            padding: 0.75rem 1.5rem;
+            border-radius: 0.5rem;
+            font-family: 'JetBrains Mono', monospace;
+            font-weight: 500;
+            font-size: 0.875rem;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+        .pdf-download-btn:hover {
+            background: linear-gradient(135deg, rgba(50, 205, 50, 0.3), rgba(246, 174, 45, 0.3));
+            box-shadow: 0 0 15px rgba(50, 205, 50, 0.4);
+            transform: translateY(-2px);
+            color: #F6AE2D;
+            border-color: #F6AE2D;
+        }
     </style>
 </head>
 <body class="min-h-screen">
@@ -330,96 +354,3 @@
                         <span class="skill-tag px-3 py-1 rounded-full text-sm">Python</span>
                         <span class="skill-tag px-3 py-1 rounded-full text-sm">Computer Vision</span>
                     </div>
-                    
-                    <div class="flex flex-wrap gap-4">
-                        <a href="https://github.com/DeepRatAI/Yolov8_Detection" target="_blank" class="link-hover text-green-500 flex items-center">
-                            <svg class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" clip-rule="evenodd"></path></svg>
-                            GitHub
-                        </a>
-                        <a href="https://medium.com/@hermmes.ia/una-introducci%C3%B3n-visual-al-futuro-de-la-ia-multimodal-8df9e6f8935a" target="_blank" class="link-hover text-green-500">Demo & Tutorial</a>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Contact Section -->
-        <section class="mb-16">
-            <div class="flex items-center mb-6">
-                <span class="terminal-prompt mr-2">$</span>
-                <h2 class="terminal-command text-xl">./hire_me.sh</h2>
-                <span class="typing ml-2"></span>
-            </div>
-            
-            <div class="bg-gray-800 bg-opacity-50 p-6 rounded-lg border border-gray-700">
-                <div class="mb-6">
-                    <p class="text-green-500 mb-2">> I'm currently open to AI Engineering, NLP, and Full-Stack AI Development roles.</p>
-                    <p class="text-green-500 mb-2">> Highly motivated to join your team, contribute my talent, and eager to learn from experienced colleagues.</p>
-                    <p class="text-green-500">> Contact me directly (if you reach out via email, please include the word 'DeepRat' in the subject line), or visit my professional website to reach out through the contact form.</p>
-                </div>
-                
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                    <div>
-                        <p class="text-green-500">EMAIL="<a href="mailto:info@deeprat.tech" class="link-hover">info@deeprat.tech</a>"</p>
-                        <p class="text-green-500">LINKEDIN="<a href="https://www.linkedin.com/in/gonzalo-romero-b9b5b4355/" target="_blank" class="link-hover">linkedin.com</a>"</p>
-                    </div>
-                    <div>
-                        <p class="text-green-500">GITHUB="<a href="https://github.com/DeepRatAI" target="_blank" class="link-hover">github.com/DeepRatAI</a>"</p>
-                        <p class="text-green-500">MEDIUM="<a href="https://medium.com/@hermmes.ia" target="_blank" class="link-hover">medium.com</a>"</p>
-                        <p class="text-green-500">PROFESSIONAL_WEB="<a href="https://deeprat.tech" target="_blank" class="link-hover">deeprat.tech</a>"</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Footer -->
-        <footer class="text-center text-gray-500 text-sm">
-            <p>©2025 DeepRat (Gonzalo Romero)</p>
-            <p class="mb-4">AI & Software Engineer, Generative AI and NLP Specialist & Developer</p>
-            <p class="text-amber-400"># Digital lab rat at your service for your next big project.</p>
-        </footer>
-    </div>
-
-    <script>
-        // Language Switcher Function
-        function toggleLangDropdown() {
-            const dropdown = document.getElementById('langDropdown');
-            dropdown.classList.toggle('active');
-            
-            // Close dropdown when clicking outside
-            document.addEventListener('click', function closeDropdown(e) {
-                if (!e.target.closest('.lang-switcher')) {
-                    dropdown.classList.remove('active');
-                    document.removeEventListener('click', closeDropdown);
-                }
-            });
-        }
-        
-        // Typing animation
-        document.addEventListener('DOMContentLoaded', function() {
-            const typingElements = document.querySelectorAll('.typing');
-            
-            typingElements.forEach(el => {
-                // Add blinking cursor
-                setInterval(() => {
-                    el.style.borderRightColor = el.style.borderRightColor === 'rgb(50, 205, 50)' ? 'transparent' : 'rgb(50, 205, 50)';
-                }, 600);
-            });
-            
-            // Project card hover effects
-            const projectCards = document.querySelectorAll('.project-card');
-            projectCards.forEach(card => {
-                card.addEventListener('mouseenter', () => {
-                    if (!card.classList.contains('highlight-project')) {
-                        card.style.boxShadow = '0 0 10px rgba(50, 205, 50, 0.3)';
-                    }
-                });
-                card.addEventListener('mouseleave', () => {
-                    if (!card.classList.contains('highlight-project')) {
-                        card.style.boxShadow = '';
-                    }
-                });
-            });
-        });
-    </script>
-</body>
-</html>
